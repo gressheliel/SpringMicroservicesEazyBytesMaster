@@ -393,12 +393,13 @@ spring:
 ```
       SPRING_PROFILES_ACTIVE: default
 ```
-
+## Error al correr docker compose
 - Marcaba un error en configserver, al clonar repo. Se cambió a false, la propiedad:
 ```
           clone-on-start: false
 ```
 
+## Probar todo
 - Para probar todo
   - Levantar Ngrok con el webhook de git
   - docker compose up -d
