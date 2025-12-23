@@ -309,48 +309,27 @@ localhost forwarding to /monitor
   - http://localhost:8071/actuator/health/liveness
   - http://localhost:8071/actuator/health/readiness
 ```
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  health:
-    readiness-state:
-      enabled: true
-    liveness-state:
-      enabled: true
-  endpoint:
-    health:
-      probes:
-        enabled: true
-```
-## Liveness & Readiness en Docker Compose
-- Liveness se asegura que el contenedor este vivo
-- Readiness se asegura que el contenedor esté listo para recibir tráfico
-- Requiere que en el config server estén las dependencias del actuator
-- Agregar en config server application.yml (health y endpoint)
-```
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  health:
-    readiness-state:
-      enabled: true
-    liveness-state:
-      enabled: true
-  endpoint:
-    health:
-      probes:
-        enabled: true
-```
-- http://localhost:8071/actuator/health/liveness
-- http://localhost:8071/actuator/health/readiness
-```
 {
 "status": "UP"
 }
+```
+
+- Agregar en configserver, application.yml
+```
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    readiness-state:
+      enabled: true
+    liveness-state:
+      enabled: true
+  endpoint:
+    health:
+      probes:
+        enabled: true
 ```
 
 ## Docker Compose
